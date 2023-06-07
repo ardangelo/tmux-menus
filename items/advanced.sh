@@ -45,12 +45,6 @@ set -- \
     3.2 C C "<P> Customize options" "customize-mode -Z" \
     1.8 C : "<P> Prompt for a command" command-prompt \
     0.0 S \
-    2.1 C m "Toggle mouse to: $new_mouse_status" "set-option -g mouse \
-        $new_mouse_status $menu_reload" \
-    2.4 C p "Change prefix <$current_prefix>" "command-prompt -1 -p \
-        'prefix (will take effect imeditally)' \
-        'run-shell \"$SCRIPT_DIR/change_prefix.sh %1\"'" \
-    0.0 S \
     1.8 C x "Kill server" "confirm-before -p \
         'kill tmux server defined in($TMUX_SOURCE) ? (y/n)' kill-server" \
     0.0 S \
@@ -63,6 +57,6 @@ set -- \
 # 0.0 M P "$plugin_conf_prompt" config.sh \
 
 req_win_width=40
-req_win_height=19
+req_win_height=14
 
 menu_parse "$@"

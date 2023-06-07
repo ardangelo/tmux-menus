@@ -27,19 +27,9 @@ set -- \
     0.0 S \
     1.7 C "," "<P> Rename window" "command-prompt -I '#W'  \
         -p 'New window name: ' 'rename-window %%'" \
-    1.7 C a "    New window after current" "command-prompt -p \
-        'Name of new window: ' 'new-window -a -n \"%%\"'" \
-    1.7 C c "<P> New window at the end" "command-prompt -p \
-        'Name of new window: ' 'new-window -n \"%%\"'" \
-    1.7 C s "    Display Window size" "display-message \
-        'Window size: #{window_width}x#{window_height}'" \
-    0.0 S \
     1.7 C l "<P> Last selected window" "last-window     $menu_reload" \
     1.7 C p "<P> Previous window [in order]" "previous-window $menu_reload" \
     1.7 C n "<P> Next     window (in order)" "next-window     $menu_reload" \
-    0.0 S \
-    1.7 C P "Previous window with an alert" "previous-window -a $menu_reload" \
-    1.7 C N "Next window with an alert" "next-window     -a $menu_reload" \
     0.0 S \
     1.7 C "\&" "<P> Kill current window" "confirm-before -p \
         'kill-window #W? (y/n)' kill-window" \
@@ -50,6 +40,6 @@ set -- \
     0.0 M H "Help  -->" "$CURRENT_DIR/help.sh $current_script"
 
 req_win_width=38
-req_win_height=21
+req_win_height=14
 
 menu_parse "$@"

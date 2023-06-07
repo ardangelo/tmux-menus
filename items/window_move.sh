@@ -27,15 +27,7 @@ set -- \
     0.0 M Home "Back to Main menu        <==" main.sh \
     0.0 M Left "Back to Handling Window  <--" windows.sh \
     0.0 S \
-    2.0 C m "Move window to other location" "$select_location W M %%\"'"
-
-if [ -n "$other_pane_is_marked" ]; then
-    set -- "$@" \
-        0.0 T "-#[nodim]Swap current window with window" \
-        0.0 C s " containing marked pane" swap-window
-fi
-
-set -- "$@" \
+    2.0 C m "Move window to other location" "$select_location W M %%\"'" \
     0.0 C "\<" "Swap window Left" "swap-window -dt:-1 $menu_reload" \
     0.0 C "\>" "Swap window Right" "swap-window -dt:+1 $menu_reload" \
     0.0 S \
@@ -45,6 +37,6 @@ set -- "$@" \
     0.0 M H "Help, explaining move & link  -->" "$CURRENT_DIR/help_window_move.sh $current_script"
 
 req_win_width=41
-req_win_height=15
+req_win_height=13
 
 menu_parse "$@"
